@@ -114,8 +114,8 @@ export class PeerJs extends React.Component<PeerJsProps, undefined> {
       <button onClick={this.send.bind(this)}>send</button>
       <button onClick={this.allPeers.bind(this)}>allPeers</button>
       <Peers emitter={this.emitter} peers={this.state.peers} />
-      <Log contents={this.state.logs} />
       <TunerC communicator={this.props.communicator} />
+      <Log contents={this.state.logs} />
       </div>;
   }
 }
