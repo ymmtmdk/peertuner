@@ -631,8 +631,8 @@ class PeerJs extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("button", { onClick: this.send.bind(this) }, "send"),
             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("button", { onClick: this.allPeers.bind(this) }, "allPeers"),
             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](Peers, { emitter: this.emitter, peers: this.state.peers }),
-            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](Log, { contents: this.state.logs }),
-            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_2__TunerC__["a" /* TunerC */], { communicator: this.props.communicator }));
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_2__TunerC__["a" /* TunerC */], { communicator: this.props.communicator }),
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](Log, { contents: this.state.logs }));
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = PeerJs;
