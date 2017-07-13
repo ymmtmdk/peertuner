@@ -1,8 +1,7 @@
 import * as React from "react";
 import { EventEmitter } from 'events';
 import { PeerId, Communicator } from "peer-communicator";
-// import { TunerC } from "./TunerC";
-// import { TunerView } from '../tunerView';
+import { JsTunerUI } from 'jstuner-ui';
 
 interface LogProps {
   readonly contents: Array<any>;
@@ -60,7 +59,7 @@ interface PeerJsProps {
 export class PeerJs extends React.Component<PeerJsProps, undefined> {
   readonly emitter: EventEmitter;
   readonly state;
-  // tunerView;
+  tunerUI;
 
   private log(text){
     this.state.logs.push(text);
@@ -77,12 +76,12 @@ export class PeerJs extends React.Component<PeerJsProps, undefined> {
     });
 
     props.communicator.on("accept", e=>{
-      // this.tunerView = new TunerView();
+      this.tunerUI = new JsTunerUI(document.getElementById("main"));
       this.log("accept");
     });
 
     props.communicator.on("recieve", e=>{
-      // this.tunerView.draw([], e.data);
+      this.tunerUI.draw([], e.data);
     });
 
     this.emitter.on("peers", e=>{
