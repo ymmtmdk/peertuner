@@ -8,7 +8,7 @@
     "@types/react": "^15.0.38",
     "@types/react-dom": "^15.5.1",
     "events": "^1.1.1",
-    "jstuner-ui": "^0.0.9",
+    "jstuner-ui": "^0.1.2",
     "peer-communicator": "^0.0.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
