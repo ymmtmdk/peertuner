@@ -2,7 +2,8 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import { PeerJs } from "./components/PeerJs";
-import { Communicator } from "./communicator";
+// import { Communicator } from "./communicator";
+import { Communicator } from "peer-communicator";
 // import { Tuner } from "./tuner";
 import { JsTunerUI, Recorder } from "jstuner-ui";
 

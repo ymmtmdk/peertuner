@@ -9,6 +9,7 @@
     "@types/react-dom": "^15.5.1",
     "events": "^1.1.1",
     "jstuner-ui": "^0.0.9",
+    "peer-communicator": "^0.0.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "skyway-peerjs": "^0.4.0"

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { EventEmitter } from 'events';
-import { PeerId, Communicator } from "../communicator";
+import { PeerId, Communicator } from "peer-communicator";
 // import { TunerC } from "./TunerC";
 // import { TunerView } from '../tunerView';
 

@@ -2198,6 +2198,13 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+peer-communicator@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/peer-communicator/-/peer-communicator-0.0.2.tgz#2786a9a64dde3abda963e2722ec6e68fb6bf5bc3"
+  dependencies:
+    events "^1.1.1"
+    skyway-peerjs "^0.4.0"
+
 performance-now@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
