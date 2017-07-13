@@ -1,8 +1,8 @@
 import * as React from "react";
 import { EventEmitter } from 'events';
 import { PeerId, Communicator } from "../communicator";
-import { TunerC } from "./TunerC";
-import { TunerView } from '../tunerView';
+// import { TunerC } from "./TunerC";
+// import { TunerView } from '../tunerView';
 
 interface LogProps {
   readonly contents: Array<any>;
@@ -60,7 +60,7 @@ interface PeerJsProps {
 export class PeerJs extends React.Component<PeerJsProps, undefined> {
   readonly emitter: EventEmitter;
   readonly state;
-  tunerView;
+  // tunerView;
 
   private log(text){
     this.state.logs.push(text);
@@ -77,12 +77,12 @@ export class PeerJs extends React.Component<PeerJsProps, undefined> {
     });
 
     props.communicator.on("accept", e=>{
-      this.tunerView = new TunerView();
+      // this.tunerView = new TunerView();
       this.log("accept");
     });
 
     props.communicator.on("recieve", e=>{
-      this.tunerView.draw([], e.data);
+      // this.tunerView.draw([], e.data);
     });
 
     this.emitter.on("peers", e=>{
@@ -114,7 +114,6 @@ export class PeerJs extends React.Component<PeerJsProps, undefined> {
       <button onClick={this.send.bind(this)}>send</button>
       <button onClick={this.allPeers.bind(this)}>allPeers</button>
       <Peers emitter={this.emitter} peers={this.state.peers} />
-      <TunerC communicator={this.props.communicator} />
       <Log contents={this.state.logs} />
       </div>;
   }
