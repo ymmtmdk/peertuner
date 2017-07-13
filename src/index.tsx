@@ -3,8 +3,8 @@ import * as ReactDOM from "react-dom";
 
 import { PeerJs } from "./components/PeerJs";
 import { Communicator } from "./communicator";
-import { Tuner } from "./tuner";
-import { TunerC } from "./components/TunerC";
+// import { Tuner } from "./tuner";
+import { JsTunerUI, Recorder } from "jstuner-ui";
 
 const APIKEY = 'c86fbf19-fbee-4b25-80ea-02b27155ec51';
 
@@ -23,17 +23,18 @@ async function main(){
     );
   }
   else{
-    ReactDOM.render(
-      <TunerC communicator={communicator} />,
-      document.getElementById("main")
-    );
-    const tuner = new Tuner();
+    const tuner = new Recorder();
+    const tunerUI = new JsTunerUI(document.getElementById("main"));
     tuner.main();
+    tuner.onData = (wave, hz, note)=>{
+      tunerUI.draw(wave, hz, note);
+    }
     await communicator.prepare();
     communicator.on("accept", e=>{
       console.log("accept");
-      tuner.onData = hz=>{
+      tuner.onData = (wave, hz, note)=>{
         communicator.send(hz);
+        tunerUI.draw(wave, hz, note);
       };
     });
   }
